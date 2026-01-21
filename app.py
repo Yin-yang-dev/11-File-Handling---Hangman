@@ -10,6 +10,7 @@ def main():
           start_game(start)
      else:
           print("ok")
+          exit()
      
 
 
@@ -23,7 +24,7 @@ def start_game(start):
                 log = json.load(file)
                 log2 = json.load(file2)
                 # print(log["languages"][random.randint(1,7)])
-                word = log["languages"][random.randint(0,7)]
+                word = log["languages"][random.randint(0,10)]
                 # initialize blanks list so we can reveal letters one at a time
                 blanks = ["_"] * len(word)
                 strikes = 0
@@ -48,10 +49,9 @@ def start_game(start):
                         print("that is correct")
                         main()
                     else:
-                        print("that is wrong. you lost")
-                        print(f"the word was {word}")
+                        print("that is wrong")
+                        print(f"The word was {word}")
                         main()
-
                 else:
                     print("incorrect thats one strike.")
                     strikes += 1
